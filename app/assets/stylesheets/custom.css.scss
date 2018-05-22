@@ -3,6 +3,8 @@ $navbar-default-bg: black;
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+/* css comment */
+
 #logo {
   float: left;
   font-size: 1.7em;
@@ -44,6 +46,11 @@ $navbar-default-bg: black;
 .btn-xlarge:hover {
   font-size: 1.7em;
   background-color: #ABAEB5;
+}
+
+.article-meta-details {
+  border-top: 1px solid #eaeaea;
+  margin-top: 15px;
 }
 
 .article-actions {
