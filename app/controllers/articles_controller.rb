@@ -9,6 +9,7 @@ class ArticlesController < ApplicationController
   def create
    # render plain: params[:article].inspect #show what was just created
     @article = Article.new(article_params) #white list values, create method #article_params
+    @article.user = User.first #temporarily hardcode user
     if @article.save
       flash[:success] = "Article was successfully created"
       redirect_to article_path(@article)
