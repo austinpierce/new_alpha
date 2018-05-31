@@ -1,6 +1,9 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:edit, :update, :show, :destroy]
   # calling find params method for edit, update, show, destroy
+  before_action :require_user, except: [:index, :show]
+  # You need this so they have to be logged on to create a user
+  before_action :require_same_user, only: [:edit, :update, :destroy]
   
   def new
     @article = Article.new
@@ -45,11 +48,19 @@ class ArticlesController < ApplicationController
   
   private
     def article_params
-      params.require(:article).permit(:title, :description) #top level key is article   
+      params.require(:article).permit(:title, :description) 
+      #top level key is article   
     end
   
     def set_article
       @article = Article.find(params[:id])
     end
+  
+  def require_same_user
+    if current_user != @article.user
+      flash[:danger] = "You can only edit or delete your own articles"
+      redirect_to root_path
+    end
+  end
   
 end
