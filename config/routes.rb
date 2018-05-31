@@ -8,6 +8,10 @@ Rails.application.routes.draw do
   # post 'users', to: 'users#create' # for undefined method users_path
   resources :users, except: [:new] # other solution for error
   
+  get 'login', to: 'sessions#new'
+  post 'login', to: 'sessions#create'
+  delete 'logout', to: 'sessions#destroy'
+  
   resources :articles
   
 end
