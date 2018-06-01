@@ -1,0 +1,11 @@
+<% if logged_in? && current_user.admin? %>
+<div class = 'row'>
+  <div class = 'col-xs-10 col-xs-offset-1'>
+    <div class = 'alert alert-warning'>
+      <h4 align = 'center'>
+        Admin Account
+      </h4>
+    </div>
+  </div>
+</div>
+<% end %>
