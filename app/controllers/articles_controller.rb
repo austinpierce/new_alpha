@@ -48,7 +48,7 @@ class ArticlesController < ApplicationController
   
   private
     def article_params
-      params.require(:article).permit(:title, :description) 
+      params.require(:article).permit(:title, :description, category_ids: []) # bracket because array form
       #top level key is article   
     end
   
