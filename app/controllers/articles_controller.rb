@@ -37,7 +37,7 @@ class ArticlesController < ApplicationController
   end
   
   def index
-    @articles = Article.paginate(page: params[:page], per_page: 5)
+    @articles = Article.paginate(page: params[:page], per_page: 8)
   end
   
   def destroy # action

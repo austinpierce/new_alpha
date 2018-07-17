@@ -1,8 +1,8 @@
 
 <% obj.each do |article| %>  
 <% if logged_in? && (current_user == article.user || current_user.admin?) %>
-<div class = 'row'>
-  <div class = 'col-xs-8 col-xs-offset-2'>
+
+  <div class = 'col-xs-2 col-xs-offset-1'>
     <% if article.IsCompleted? %>
       <div class = 'well well-lg completed-feature'>
     <% else %>
@@ -14,7 +14,7 @@
 
         <div class = 'article-body'>  
        
-        <%= truncate(article.description, length: 100) %>
+        <%= truncate(article.description, length: 80) %>
           <div class = 'article-meta-details'>
           <small>
             Created by: <%= article.user.username if article.user %>
@@ -36,5 +36,5 @@
       <% end %>
     </div>
   </div>
-</div>
+
 <% end %>
