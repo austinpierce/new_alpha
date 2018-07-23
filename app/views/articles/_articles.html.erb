@@ -2,7 +2,7 @@
 <% obj.each do |article| %>  
 <% if logged_in? && (current_user == article.user || current_user.admin?) %>
 
-  <div class = 'col-xs-2'>
+  <div class = 'col-xs-4'>
     <% if article.IsCompleted? %>
       <div class = 'well well-lg completed-feature'>
     <% else %>
