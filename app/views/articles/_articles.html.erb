@@ -1,5 +1,5 @@
 
-<% obj.each do |article| %>  
+<% obj.order('"IsCompleted" ASC').each do |article| %>  
 <% if logged_in? && (current_user == article.user || current_user.admin?) %>
 
   <div class = 'col-xs-4'>
